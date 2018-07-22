@@ -1,21 +1,28 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home';
-import User from './views/User';
+import Search from '@/components/Search';
+import UserList from '@/components/UserList';
+import Profile from '@/components/Profile';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'Search',
+      component: Search
     },
     {
-      path: '/user',
-      name: 'user',
-      component: User
+      path: '/userlist',
+      name: 'UserList',
+      component: UserList
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     }
   ]
 });
