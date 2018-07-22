@@ -47,7 +47,7 @@ $sea-green: #16a085
   box-shadow: 0 5px 10px rgba($black, .5)
   color: $dark-blue
   font-size: 16px
-  margin-bottom: 50px
+  margin-bottom: 30px
   max-width: 100%
   outline: none
   padding: 13px

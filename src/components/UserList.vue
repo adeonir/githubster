@@ -2,7 +2,7 @@
   <div class="user-list">
     <div class="card" v-for="(user, index) of users" :key="index">
       <div class="card__body" @click.prevent="getProfile(user.login)">
-        <img class="card__avatar" :src="user.avatar_url" alt="user.login">
+        <img class="card__avatar" :src="user.avatar_url" :alt="user.login">
         <p class="card__username">@{{ user.login }}</p>
       </div>
     </div>
@@ -76,7 +76,8 @@ $sea-green: #16a085
   &__avatar
     border-radius: 5px 0 0 5px
     display: block
-    height: 100%
+    height: 60px
+    width: 60px
 
   &__username
     margin-left: 15px

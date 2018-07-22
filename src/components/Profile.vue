@@ -2,7 +2,7 @@
   <div class="profile">
     <div class="card">
       <div class="card__body">
-        <img :src="profile.avatar_url" :alt="profile.name" class="card__avatar">
+        <img class="card__avatar" :src="profile.avatar_url" :alt="profile.name">
         <div class="card__info">
           <h3 class="card__name">{{ profile.name }}</h3>
           <p class="card__bio">{{ profile.bio }}</p>
@@ -47,6 +47,7 @@ $sea-green: #16a085
 .profile
   display: flex
   justify-content: center
+  margin-bottom: 30px
   margin-top: 125px
 
 .card

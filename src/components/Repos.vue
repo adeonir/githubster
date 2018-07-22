@@ -1,10 +1,12 @@
 <template>
   <div class="repos">
-    <div v-for="repo of repos" :key="repo.id" class="card">
-      <a class="card__link" :href="repo.html_url" target="_blank">{{ repo.name }}</a>
-      <div class="card__icons">
-        <p><img src="/assets/star.svg" alt="Stars"><span>{{ repo.stargazers_count }}</span></p>
-        <p><img src="/assets/code-branch.svg" alt="Forks"><span>{{ repo.forks_count }}</span></p>
+    <div class="card" v-for="repo of repos" :key="repo.id" @click="gotToRepo(repo.html_url)">
+      <div class="card__body">
+        <p class="card__title">{{ repo.name }}</p>
+        <div class="card__icons">
+          <p><img src="/assets/star.svg" alt="Stars"><span>{{ repo.stargazers_count }}</span></p>
+          <p><img src="/assets/code-branch.svg" alt="Forks"><span>{{ repo.forks_count }}</span></p>
+        </div>
       </div>
     </div>
   </div>
@@ -20,6 +22,11 @@ export default {
   },
   created() {
     this.$store.dispatch('fetchRepos', this.$store.state.username);
+  },
+  methods: {
+    gotToRepo(url) {
+      window.open(url, '_blank');
+    }
   }
 };
 </script>
@@ -36,25 +43,29 @@ $sea-green: #16a085
 
 .card
   border-top: 1px solid $sea-green
-  color: $dark-blue
-  display: flex
-  justify-content: space-between
   max-width: 100%
-  padding: 20px 0
   text-align: left
   width: 600px
 
   &:last-child
     border-bottom: 1px solid $sea-green
+  
+  &__body
+    background: $white
+    color: $dark-blue
+    display: flex
+    justify-content: space-between
+    padding: 15px
+    transition: background .5 ease
 
-  &__link
+    &:hover
+      background: desaturate(lighten($sea-green, 50%), 20%)
+      cursor: pointer
+
+  &__title
     color: $dark-blue
     font-decoration: none
     font-weight: bold
-    transition: color .5 ease
-
-    &:hover
-      color: $sea-green
 
   &__icons
     display: flex
