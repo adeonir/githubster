@@ -1,6 +1,7 @@
 {
   "name": "githubster",
   "version": "0.1.0",
+  "description": "A simple project to study Vue, VueRouter and Vuex",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
