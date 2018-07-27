@@ -46,20 +46,21 @@ $sea-green: #16a085
   width: 600px
   &:last-child
     border-bottom: 1px solid $sea-green
-  
+
   &__body
+    align-items: center
     background: $white
     color: $dark-blue
     display: flex
     justify-content: space-between
     padding: 15px
     transition: background .5 ease
+
     &:hover
       background: desaturate(lighten($sea-green, 50%), 20%)
       cursor: pointer
-    
+
     @media screen and (max-width: 430px)
-      align-items: center
       flex-direction: column
       justify-content: center
       padding-bottom: 5px
@@ -76,7 +77,13 @@ $sea-green: #16a085
 
   &__icons
     display: flex
-    svg
-      height: 16px
-      margin: 0 5px
+
+    p:first-child
+      margin-right: 10px
+
+    span
+      margin-left: 3px
+
+    img
+      height: 14px
 </style>
